@@ -15,6 +15,7 @@
 from ubuntu:precise
 
 maintainer Dockerfiles
+ENV DJANGO_VERSION 1.8.1
 
 run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 run apt-get update
@@ -24,7 +25,7 @@ run apt-get install -y nginx supervisor
 run easy_install pip
 
 # install uwsgi now because it takes a little while
-run pip install uwsgi
+run pip install uwsgi django=="$DJANGO_VERSION"
 
 # install nginx
 run apt-get install -y python-software-properties
@@ -42,7 +43,7 @@ run ln -s /home/docker/code/nginx-app.conf /etc/nginx/sites-enabled/
 run ln -s /home/docker/code/supervisor-app.conf /etc/supervisor/conf.d/
 
 # run pip install
-run pip install -r /home/docker/code/app/requirements.txt
+#run pip install -r /home/docker/code/app/requirements.txt
 
 # install django, normally you would remove this step because your project would already
 # be installed in the code/app/ directory
