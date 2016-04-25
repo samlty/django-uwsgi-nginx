@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from ubuntu:precise
+from ubuntu:trusty
 
 maintainer Dockerfiles
 ENV DJANGO_VERSION 1.8.1
 
-run echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+run echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
+run echo "deb http://archive.ubuntu.com/ubuntu trusty main restricted" >> /etc/apt/sources.list
+run echo "deb http://archive.ubuntu.com/ubuntu trusty-updates main universe" >> /etc/apt/sources.list
+run echo "deb http://archive.ubuntu.com/ubuntu trusty-updates main restricted" >> /etc/apt/sources.list
 run apt-get update
 #run apt-get install -y build-essential git
 run apt-get install -y git
