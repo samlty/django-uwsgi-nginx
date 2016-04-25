@@ -53,7 +53,7 @@ run ln -s /home/docker/code/supervisor-app.conf /etc/supervisor/conf.d/
 # install django, normally you would remove this step because your project would already
 # be installed in the code/app/ directory
 run django-admin.py startproject myself /home/docker/code/app/
-run python /home/docker/code/app/manage.py startapp personal
+run python /home/docker/code/app/manage.py startapp personal /home/docker/code/app/myself
 
 expose 80
 cmd ["supervisord", "-n"]
