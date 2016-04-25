@@ -33,7 +33,7 @@ run pip install uwsgi django=="$DJANGO_VERSION"
 
 # install nginx
 run apt-get install -y python-software-properties
-run apt-get install -y nginx
+#run apt-get install -y nginx
 #run apt-get update
 #RUN add-apt-repository -y ppa:nginx/stable
 run apt-get install -y sqlite3
