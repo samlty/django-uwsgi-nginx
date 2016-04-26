@@ -29,7 +29,7 @@ run apt-get install -y nginx supervisor
 run easy_install pip
 
 # install uwsgi now because it takes a little while
-run pip install uwsgi django=="$DJANGO_VERSION"
+run pip install uwsgi django=="$DJANGO_VERSION" requests
 
 # install nginx
 run apt-get install -y python-software-properties
