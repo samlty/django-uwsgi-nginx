@@ -37,6 +37,7 @@ run apt-get install -y python-software-properties
 #run apt-get update
 #RUN add-apt-repository -y ppa:nginx/stable
 run apt-get install -y sqlite3 vim python-mysql.connector
+run apt-get install -y libpq-dev
 
 # install our code
 add . /home/docker/code/
