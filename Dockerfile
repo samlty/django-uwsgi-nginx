@@ -25,11 +25,11 @@ run apt-get update
 #run apt-get install -y build-essential git
 run apt-get install -y git
 run apt-get install -y python python-dev python-setuptools
-run apt-get install -y nginx supervisor
+run apt-get install -y nginx supervisor libpq-dev
 run easy_install pip
 
 # install uwsgi now because it takes a little while
-run pip install uwsgi django=="$DJANGO_VERSION" requests
+run pip install uwsgi django=="$DJANGO_VERSION" requests psycopg2
 
 # install nginx
 run apt-get install -y python-software-properties
@@ -37,7 +37,6 @@ run apt-get install -y python-software-properties
 #run apt-get update
 #RUN add-apt-repository -y ppa:nginx/stable
 run apt-get install -y sqlite3 vim python-mysql.connector
-run apt-get install -y libpq-dev
 
 # install our code
 add . /home/docker/code/
